@@ -21,7 +21,7 @@ const LoginPage = () => {
     try {
       // ADD THIS
      const API = import.meta.env.VITE_API_URL;
-     
+     console.log(`${API}`)
      // CHANGE FETCH
      const response = await fetch(`${API}/api/auth/login`, {
        method: "POST",

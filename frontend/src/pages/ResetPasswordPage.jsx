@@ -31,7 +31,7 @@ const ResetPasswordPage = () => {
       // We pass the token in the URL (req.params) and password in body (req.body)
       // ADD THIS
       const API = import.meta.env.VITE_API_URL;
-
+      console.log(`${API}`)
       // CHANGE FETCH
       const response = await fetch(`${API}/api/auth/resetPassword/${token}`, {
         method: "POST",
