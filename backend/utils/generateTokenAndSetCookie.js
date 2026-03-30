@@ -5,12 +5,12 @@ export const generateTokenAndSetCookie = (res , userId) => {
     expiresIn:"7d"
    })
 
-  res.cookie("token", token, {
-  httpOnly: true,
-  secure: true,         // REQUIRED for Vercel
-  sameSite: "none",     // REQUIRED for cross-origin
-  maxAge: 7 * 24 * 60 * 60 * 1000,
-})
+  res.cookie("token" , token , {
+   httpOnly: true,
+   secure: true,      // ✅ IMPORTANT for EC2 HTTP
+   sameSite: "lax",    // ✅ works with Vercel
+   maxAge: 7 * 24 * 60 * 60 * 1000,
+  })
 
    return token;
 }
